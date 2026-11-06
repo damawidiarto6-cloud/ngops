@@ -1,0 +1,95 @@
+<<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RPL Coffee & Space</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav><b>RPL Coffee &amp; Space</b><div><a class="hide" href="#menu">Menu</a><a class="hide" href="#paket">Paket ruang</a><a href="#lokasi">Lokasi</a><a href="#reservasi">Reservasi</a></div></nav>
+
+<header class="hero">
+  <div>
+    <h1>Ngopi dulu, baru ngoding.</h1>
+    <p>Kafe dan ruang belajar yang dikelola siswa RPL. Kopi enak, WiFi kencang, dan meja yang cukup luas untuk laptop dan ide-idemu.</p>
+    <a class="btn" href="#reservasi">Reservasi meja</a>
+  </div>
+  <div class="ticket" aria-label="Contoh pesanan">
+    <span class="c">// pesanan #014</span><br>
+    <span class="k">const</span> order = {<br>
+    &nbsp;&nbsp;minum: <span class="k">"Kopi Susu Gula Aren"</span>,<br>
+    &nbsp;&nbsp;meja: <span class="k">"Solo Desk 3"</span>,<br>
+    &nbsp;&nbsp;wifi: <span class="k">true</span><br>
+    };
+    <hr>
+    <span class="c">// status:</span> sedang diseduh...
+  </div>
+</header>
+
+<section id="menu">
+  <h2>Menu andalan</h2>
+  <div class="menu">
+    <article class="item"><span class="badge">Terlaris</span><h3>Kopi Susu Gula Aren</h3><p>Espresso, susu segar, dan gula aren asli.</p><span class="price">Rp12.000</span></article>
+    <article class="item"><h3>Americano</h3><p>Espresso ganda dengan air panas. Pas untuk begadang debugging.</p><span class="price">Rp10.000</span></article>
+    <article class="item"><span class="badge"><h1></h1>Baru<h1></span><h3>Es Kopi Pandan</h3><p>Kopi dingin dengan sirup pandan dan susu.</p><span class="price">Rp14.000</span></article>
+    <article class="item"><h3>Roti Bakar Coklat</h3><p>Roti tebal, coklat leleh, taburan keju.</p><span class="price">Rp9.000</span></article>
+  </div>
+</section>
+
+<section id="paket">
+  <h2>Paket area ruang</h2>
+  <p class="sub">Pilih ruang sesuai kebutuhan belajar atau rapat timmu.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Paket</th><th>Fasilitas</th><th>Kapasitas</th><th>Harga</th></tr></thead>
+    <tbody>
+      <tr><td>Solo Desk</td><td>WiFi, colokan, lampu meja</td><td>1 orang</td><td>Rp8.000/jam</td></tr>
+      <tr><td>Diskusi Kelompok</td><td>Meja besar, papan tulis</td><td>4–6 orang</td><td>Rp25.000/jam</td></tr>
+      <tr><td>Ruang Rapat Mini</td><td>Proyektor, AC, papan tulis</td><td>8–10 orang</td><td>Rp50.000/jam</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="lokasi">
+  <h2>Lokasi &amp; jam buka</h2>
+  <p class="sub">Di lantai 1, sebelah Laboratorium RPL.</p>
+  <div class="loc">
+    <div class="map">
+      <img src="f8u59v6b.jpg">
+        <rect width="520" height="300" fill="var(--surface)"/>
+        <path d="M0 210H520M260 0V300" stroke="var(--line)" stroke-width="22"/>
+        <rect x="40" y="40" width="170" height="120" rx="8" fill="var(--line)"/>
+        <rect x="300" y="40" width="180" height="120" rx="8" fill="var(--line)"/>
+        <rect x="300" y="240" width="180" height="48" rx="8" fill="var(--line)"/>
+        <text x="125" y="105" text-anchor="middle" fill="var(--muted)" font-size="14">Gedung Utama</text>
+        <text x="390" y="105" text-anchor="middle" fill="var(--muted)" font-size="14">Lab RPL</text>
+        <circle cx="260" cy="210" r="16" fill="var(--accent)"/>
+        <circle cx="260" cy="210" r="6" fill="var(--accent-ink)"/>
+        <text x="282" y="190" fill="var(--ink)" font-size="15" font-weight="700">RPL Coffee &amp; Space</text>
+      </svg>
+    </div>
+    <div class="hours">
+      <h3>Jam buka</h3>
+      <dl><dt>Senin–Jumat</dt><dd>07.00–16.00</dd><dt>Sabtu</dt><dd>08.00–13.00</dd><dt>Minggu</dt><dd>Tutup</dd></dl>
+    </div>
+  </div>
+</section>
+
+<section id="reservasi">
+  <h2>Reservasi meja</h2>
+  <p class="sub">Isi formulir, kami konfirmasi lewat WhatsApp.</p>
+  <form id="f">
+    <label>Nama<input name="nama" required autocomplete="name"></label>
+    <label>Nomor WhatsApp<input name="wa" type="tel" required inputmode="tel" placeholder="08xxxxxxxxxx"></label>
+    <label>Tanggal<input name="tgl" type="date" required></label>
+    <label>Jam<input name="jam" type="time" min="07:00" max="16:00" required></label>
+    <label>Jumlah orang<input name="jml" type="number" min="1" max="10" value="1" required></label>
+    <label>Paket<select name="paket"><option>Solo Desk</option><option>Diskusi Kelompok</option><option>Ruang Rapat Mini</option></select></label>
+    <div class="full"><button class="btn" type="submit">Kirim reservasi</button></div>
+    <div class="ok full" id="ok" role="status"></div>
+  </form>
+</section>
+
+<script src="script.js"></script>
